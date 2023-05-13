@@ -18,6 +18,9 @@ public class FavStoriesActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
 
+
+    TextView favstories;
+
     List<Story> favstoryList = Data.FavList;
 
     @Override
@@ -31,6 +34,16 @@ public class FavStoriesActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
         getSupportActionBar().hide();
+
+        favstories=findViewById(R.id.favorite_stories);
+
+
+        if (favstoryList.isEmpty()) {
+
+        favstories.setText("No Favorite Story Selected");}
+
+        else {favstories.setText("Favorite Stories");}
+
 
 
 
