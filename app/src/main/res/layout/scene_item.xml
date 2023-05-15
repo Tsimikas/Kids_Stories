@@ -11,7 +11,7 @@
         android:text="Scene 1"
         android:textColor="@color/belge"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:textSize="45dp"/>
 
     <ImageView
@@ -20,7 +20,7 @@
         android:layout_height="200dp"
         android:src="@mipmap/ic_launcher"
         android:layout_below="@+id/scene_title"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:scaleType="fitXY"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"/>
@@ -28,13 +28,29 @@
     <TextView
         android:id="@+id/scene_desc"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="350dp"
         android:layout_below="@id/imagev"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
-        android:text="hhhhhh"
+        android:text="@string/blanche_neige"
         android:textColor="@color/belge"
         android:textSize="20dp" />
+
+
+
+
+    <ImageButton
+        android:id="@+id/audio_start"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/audio_icon"
+        android:background="@color/blueblack"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+       />
+
+
 
 
 </RelativeLayout>

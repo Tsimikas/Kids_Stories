@@ -1,9 +1,13 @@
 package Adapter;
 
 import android.content.Context;
+import android.media.MediaPlayer;
+import android.net.Uri;
+import android.speech.tts.TextToSpeech;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,6 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.hayder.kidsstories.R;
+
+import java.util.Locale;
 
 import Model.Scene;
 import Model.Story;
@@ -21,10 +27,24 @@ public class SceneAdapter extends PagerAdapter {
 
     private Story story;
 
+    private TextToSpeech textToSpeech;
+
+    private boolean isPlaying = false;
+
+
+
+
+
     public SceneAdapter(Context context, Story story) {
         this.context = context;
         layoutInflater=LayoutInflater.from(context);
         this.story =story;
+
+        textToSpeech = new TextToSpeech(context,status->{
+            if (status != TextToSpeech.ERROR){
+                textToSpeech.setLanguage(Locale.ENGLISH);
+            }
+        });
     }
 
     @Override
@@ -50,16 +70,45 @@ public class SceneAdapter extends PagerAdapter {
         title_scene=view.findViewById(R.id.scene_title);
         description_scene= view.findViewById(R.id.scene_desc);
 
+        ImageButton start;
+        start =view.findViewById(R.id.audio_start);
+
 
         Scene scene = story.getScenes()[position];
         title_scene.setText(scene.getScene_title());
-        description_scene.setText(scene.getScene_title());
+        description_scene.setText(scene.getContext());
         imageView.setImageResource(scene.getScene_image());
+
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!isPlaying){
+                    textToSpeech.speak(scene.getContext(), TextToSpeech.QUEUE_FLUSH, null);
+                    start.setImageResource(R.drawable.pause_icon);
+                    isPlaying = true;
+
+                } else {
+                    textToSpeech.stop();
+                    start.setImageResource(R.drawable.audio_icon);
+                    isPlaying = false;
+                }
+
+            }
+        });
+
+
+
+
+
         container.addView(view);
         return view;
     }
 
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
         container.removeView((View) object);
+        if (textToSpeech != null){
+            textToSpeech.stop();
+            textToSpeech.shutdown();
+        }
     }
 }

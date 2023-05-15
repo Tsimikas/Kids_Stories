@@ -1,5 +1,28 @@
 <resources>
     <string name="app_name">Kids Stories</string>
     <string name="blanche_neige">Blanche-Neige est une princesse dune très grande beauté, ce qui rend jalouse sa belle-mère, la Reine. Cette dernière demande quotidiennement à son miroir magique qui est la plus belle du royaume, attendant comme réponse quil lui dise que cest elle. Mais un jour, le miroir affirme que la plus jolie femme du royaume est Blanche-Neige. Furieuse, la Reine décide alors de tuer la jeune fille. Cependant, le chasseur quelle charge de cette tâche ne trouve pas le courage de laccomplir et permet à Blanche-Neige de senfuir. Perdue dans la forêt et à bout de force, celle-ci échoue dans une maison où habitent sept nains.</string>
+    <string name="firstavril_desc_scene1">
+        Today is April 1st! I prepared lots of paper fish to stick behind the backs of my family and friends.
+    </string>
+
+
+    <string name="firstavril_desc_scene3">
+      I arrive at school and I decide to stick fish behind my classmates backs. Everyone laughs but wonders who the big prankster is!
+    </string>
+
+    <string name="firstavril_desc_scene4">
+        In the playground all the students have fish on their backs, its so funny! But I feel a lot of them laughing looking at me. They must have understood that it was me?
+    </string>
+
+    <string name="firstavril_desc_scene5">
+       The day ends, I go home, I find Papa and Mama who explode with laughter! I turn around and see in the ice in the entrance, that my back is covered with fish. Olalalala! Its the watered sprinkler!
+    </string>
+
+    <string name="firstavril_desc_scene2">
+        I find Mom and Dad at breakfast, giving them a big kiss, I discreetly stick a fish each on their back.
+    </string>
+
+
+
 
 </resources>

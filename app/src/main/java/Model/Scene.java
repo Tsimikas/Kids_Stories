@@ -8,7 +8,9 @@ public class Scene implements Serializable {
     String context;
     int scene_image;
 
-    public Scene(String scene_title, String context, int scene_image) {
+
+
+    public Scene(String scene_title, String context, int scene_image){
         this.scene_title = scene_title;
         this.context = context;
         this.scene_image = scene_image;
@@ -33,6 +35,9 @@ public class Scene implements Serializable {
     public void setContext(String context) {
         this.context = context;
     }
+
+
+
 
     public void setScene_image(int scene_image) {
         this.scene_image = scene_image;
