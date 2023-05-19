@@ -3,4 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 <item android:id="@+id/add_to_favourite"
     android:title="Add to Favorite..." />
+
+    <item android:id="@+id/share"
+        android:title="Share"/>
 </menu>

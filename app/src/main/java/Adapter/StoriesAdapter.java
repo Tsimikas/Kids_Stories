@@ -102,9 +102,11 @@ public class StoriesAdapter extends RecyclerView.Adapter<StoriesAdapter.StoriesV
                                         Toast.makeText(context, "The story is aleardy there", Toast.LENGTH_SHORT).show();
                                     } else {
                                         Data.FavList.add(story);
-                                        Toast.makeText(context, "Added to favorite list", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(context, "Added to favorites", Toast.LENGTH_SHORT).show();
                                     }
                                     return true;
+
+                                case R.id.share : share(); return true;
                             }
                             return false;
                         }
@@ -130,6 +132,20 @@ public class StoriesAdapter extends RecyclerView.Adapter<StoriesAdapter.StoriesV
 
         }
     }
+
+    private void share(){
+        Intent share = new Intent(Intent.ACTION_SEND);
+
+        Intent Chooser = Intent.createChooser(share,"SHARE");
+
+            context.startActivity(Chooser);
+
+
+    }
+
+
+
+
 
 
     public void setStories(List<Story> stories) {
