@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
@@ -41,8 +42,15 @@ public class SceneAdapter extends PagerAdapter {
         this.story =story;
 
         textToSpeech = new TextToSpeech(context,status->{
-            if (status != TextToSpeech.ERROR){
-                textToSpeech.setLanguage(Locale.ENGLISH);
+            if (status != TextToSpeech.SUCCESS){
+              int result =  textToSpeech.setLanguage(Locale.ENGLISH);
+              if (result ==  TextToSpeech.LANG_MISSING_DATA  || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                  Toast.makeText(context, "Language not Supported", Toast.LENGTH_SHORT).show();
+              }else {
+                      Toast.makeText(context, "TextToSpeech initialization failed", Toast.LENGTH_SHORT).show();
+                  }
+
+
             }
         });
     }
@@ -95,11 +103,6 @@ public class SceneAdapter extends PagerAdapter {
 
             }
         });
-
-
-
-
-
         container.addView(view);
         return view;
     }
