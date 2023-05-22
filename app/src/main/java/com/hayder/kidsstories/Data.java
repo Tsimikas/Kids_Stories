@@ -71,7 +71,7 @@ public class Data {
 
 
 
-        storyList.add(new Story("April Fool", "1 april", R.drawable.firstavril_image, new Scene[]
+        storyList.add(new Story("April Fool", "Today is the first of april , lets get people fooled! ", R.drawable.firstavril_image, new Scene[]
                 {
                         new Scene("First Scene"," Today is April 1st! I prepared lots of paper fish to stick behind the backs of my family and friends.", R.drawable.firstavril_image),
                         new Scene("Seconde Scene","  I find Mom and Dad at breakfast, giving them a big kiss, I discreetly stick a fish each on their back." ,R.drawable.firstapril_2scene),
